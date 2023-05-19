@@ -40,7 +40,7 @@ class SocialLogin extends StatelessWidget {
                   ),
 
 
-                  child:SvgPicture.asset('assets/images/Google.svg', height: 70)
+                  child:Image.asset('assets/images/Google.svg', height: 70)
                   ),
               ),
               const SizedBox(width: 10,),
@@ -61,7 +61,7 @@ class SocialLogin extends StatelessWidget {
                     ),
 
 
-                    child:SvgPicture.asset(
+                    child:Image.asset(
                       'assets/images/Facebook.svg', height: 70,
                     )
                 ),
@@ -84,7 +84,7 @@ class SocialLogin extends StatelessWidget {
                     ),
 
 
-                    child:SvgPicture.asset(
+                    child:Image.asset(
                       'assets/images/Instagram.svg', height: 70,
                     )
                 ),

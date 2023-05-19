@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' ;
 import 'package:get/get_utils/get_utils.dart';
+import 'package:saytu_jigueen_ni/view/widgets/PageNote1.dart';
 class PageNote1 extends StatefulWidget {
   const PageNote1({Key? key}) : super(key: key);
 
@@ -20,11 +21,16 @@ class _PageNote1State extends State<PageNote1> {
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            Text("Avez-vous des nausées matinales ?",
+            Text(" Avez-vous des nausées matinales ?",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 30,
                     fontWeight: FontWeight.bold)),
+            Padding(padding: EdgeInsets.all(10)),
+            Image.asset('assets/images/nausee.png'),
+
+            Padding(padding: EdgeInsets.all(10)),
+
             Row(children: [
               Radio(value: 1,
                 groupValue: _value,
@@ -50,7 +56,10 @@ class _PageNote1State extends State<PageNote1> {
                 groupValue: _value,
                 onChanged: (Value){
                   setState(() {
-                    _value =_value;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) =>PageNote2()),
+                    );
                   });
                 },
               ),
@@ -64,6 +73,21 @@ class _PageNote1State extends State<PageNote1> {
 
             ],
 
+            ),
+            OutlinedButton(
+              onPressed: (){
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) =>PageNote2()),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                side: const BorderSide(width: 1, color: Colors.black),
+              ),
+              child: const Text('Passer'),
             ),
           ],
         ),

@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:saytu_jigueen_ni/utils/global.color.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:saytu_jigueen_ni/view/widgets/liste%20grossesse.dart';
+import 'package:saytu_jigueen_ni/view/widgets/note.dart';
+
+import 'cycle.dart';
+
 
 class InscriGlobal extends StatelessWidget {
   const InscriGlobal({Key? key}) : super(key: key);
@@ -18,28 +23,51 @@ class InscriGlobal extends StatelessWidget {
           Padding(padding: EdgeInsets.all(10)),
           ElevatedButton(
             style: ButtonStyle(
-              padding:MaterialStatePropertyAll(EdgeInsets.all(20)) ,
+              padding:MaterialStatePropertyAll(EdgeInsets.all(08)) ,
               backgroundColor: MaterialStatePropertyAll(Colors.pink),
+
             ),
-              onPressed: () => print('button click'),
-          child: Text('                    Suivre mon cycle                                      ',
-          style: TextStyle(
-            fontSize: 20
+              onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) =>NoteCycle()),
+              );
+              },
+          child:ListTile(
+            leading: Icon(Icons.calendar_month_outlined ,color: Colors.white),
+            title: Text(' Suivre mon cycle ',
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+              ),
+            ),
           ),
-          ),
+
           ),
           Padding(padding: EdgeInsets.all(10)),
           ElevatedButton(
             style: ButtonStyle(
-              padding:MaterialStatePropertyAll(EdgeInsets.all(20)) ,
+              padding:MaterialStatePropertyAll(EdgeInsets.all(08)) ,
               backgroundColor: MaterialStatePropertyAll(Colors.pink),
             ),
-            onPressed: () => print('button click'),
-            child: Text('                   Suivre ma grossesse                                ',
-              style: TextStyle(
-                  fontSize: 20
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) =>PageGros()),
+              );
+            },
+            child:ListTile(
+              leading: Icon(Icons.woman ,color: Colors.white,),
+              title: Text(' Suivre ma grossesse ',
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+                ),
               ),
             ),
+
           ),
 
 

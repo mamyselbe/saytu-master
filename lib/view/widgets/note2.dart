@@ -22,10 +22,10 @@ class _PageInfoState extends State<PageInfo> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(" Avant vos régles ,souffrez-vous des Symptômes suivants(SPM)  ?",
+          const Text(" Avant vos régles ,souffrez-vous des Symptômes suivants (SPM)  ?",
       style: TextStyle(
           color: Colors.black,
-          fontSize: 30,
+          fontSize: 25,
           fontWeight: FontWeight.bold)),
           Row(children: [
             Radio(value: 1,

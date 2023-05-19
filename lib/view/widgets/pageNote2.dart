@@ -20,11 +20,16 @@ class _PageNote3State extends State<PageNote3> {
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            Text("Avez-vous des difficultés à dormir ?",
+            Text("  Avez-vous des difficultés à dormir ?       ",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold)),
+            Padding(padding: EdgeInsets.all(10)),
+            Image.asset('assets/images/dormir.png'),
+
+            Padding(padding: EdgeInsets.all(10)),
+
             Row(children: [
               Radio(value: 1,
                 groupValue: _value,
@@ -50,7 +55,10 @@ class _PageNote3State extends State<PageNote3> {
                 groupValue: _value,
                 onChanged: (Value){
                   setState(() {
-                    _value =_value;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) =>PageNote3()),
+                    );
                   });
                 },
               ),
@@ -65,6 +73,22 @@ class _PageNote3State extends State<PageNote3> {
             ],
 
             ),
+            OutlinedButton(
+              onPressed: (){
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) =>PageNote3()),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                side: const BorderSide(width: 1, color: Colors.black),
+              ),
+              child: const Text('Passer'),
+            ),
+
           ],
         ),
       ),

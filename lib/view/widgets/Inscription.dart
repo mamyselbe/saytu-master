@@ -91,18 +91,7 @@ class _InscriptionState extends State<Inscription> {
                   ),
                   child: const Text("S'inscrire"),
                 ),
-                Padding(padding: EdgeInsets.all(10)),
 
-                OutlinedButton(
-                  onPressed: (){},
-                  style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    side: const BorderSide(width: 1, color: Colors.black),
-                  ),
-                  child: const Text('Besoin d/un nouveau compte'),
-                ),
               ],
             ),
           ),

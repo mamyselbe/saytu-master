@@ -24,8 +24,13 @@ class _PageInfo5State extends State<PageInfo5> {
             Text("Avez-vous déja eu des crampes menstrulles ?",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold)),
+            Padding(padding: EdgeInsets.all(10)),
+            Image.asset('assets/images/crampe.png',),
+
+            Padding(padding: EdgeInsets.all(10)),
+
             Row(children: [
               Radio(value: 1,
                 groupValue: _value,
@@ -66,6 +71,17 @@ class _PageInfo5State extends State<PageInfo5> {
             ],
 
             ),
+            OutlinedButton(
+              onPressed: (){},
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                side: const BorderSide(width: 1, color: Colors.black),
+              ),
+              child: const Text('Je ne suis pas sur'),
+            ),
+
           ],
         ),
       ),

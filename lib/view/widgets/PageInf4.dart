@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' ;
 import 'package:get/get_utils/get_utils.dart';
+import 'package:saytu_jigueen_ni/view/widgets/cycle2.dart';
 
 class PageInfo4 extends StatefulWidget {
   const PageInfo4({Key? key}) : super(key: key);
@@ -21,17 +22,25 @@ class _PageInfo4State extends State<PageInfo4> {
         child: Column (
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            Text("Est-ce que vos régles arrivent de maniére inattendue ?",
+
+            Text(" Est-ce que vos régles arrivent de maniére inattendue ?",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize:   28,
                     fontWeight: FontWeight.bold)),
+            Padding(padding: EdgeInsets.all(10)),
+            Image.asset('assets/images/question.png',),
+
+
             Row(children: [
               Radio(value: 1,
                 groupValue: _value,
                 onChanged: (Value){
                   setState(() {
-                    _value =_value;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) =>PageCycle2()),
+                    );
                   });
                 },
               ),
@@ -47,6 +56,7 @@ class _PageInfo4State extends State<PageInfo4> {
 
             ),
             Row(children: [
+
               Radio(value: 1,
                 groupValue: _value,
                 onChanged: (Value){
@@ -66,6 +76,22 @@ class _PageInfo4State extends State<PageInfo4> {
             ],
 
             ),
+            OutlinedButton(
+              onPressed: (){
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) =>PageCycle2()),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                side: const BorderSide(width: 1, color: Colors.black),
+              ),
+              child: const Text('Je ne suis pas sur'),
+            ),
+
           ],
         ),
       ),

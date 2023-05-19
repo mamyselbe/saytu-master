@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' ;
 import 'package:get/get_utils/get_utils.dart';
+import 'package:saytu_jigueen_ni/view/widgets/pageNote2.dart';
 class PageNote2 extends StatefulWidget {
   const PageNote2({Key? key}) : super(key: key);
 
@@ -20,17 +21,25 @@ class _PageNote2State extends State<PageNote2> {
         child: Column (
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-        Text("Vous sentez-vous souvent fatiguée ?",
-        style: TextStyle(
-        color: Colors.black,
-        fontSize: 30,
-        fontWeight: FontWeight.bold)),
+          Text("Vous sentez-vous souvent fatiguée ?",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold)),
+          Padding(padding: EdgeInsets.all(10)),
+          Image.asset('assets/images/fatigue.png',),
+          Padding(padding: EdgeInsets.all(10)),
+
     Row(children: [
     Radio(value: 1,
     groupValue: _value,
     onChanged: (Value){
     setState(() {
-    _value =_value;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) =>PageNote3()),
+      );
+
     });
     },
     ),
