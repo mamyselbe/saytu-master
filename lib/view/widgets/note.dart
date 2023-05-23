@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:saytu_jigueen_ni/utils/global.color.dart';
-import 'package:saytu_jigueen_ni/view/widgets/PageInf4.dart';
 import 'package:saytu_jigueen_ni/view/widgets/button.global.dart';
+import 'package:saytu_jigueen_ni/view/widgets/regles.dart';
 import 'package:saytu_jigueen_ni/view/widgets/social.login.dart';
+
+import 'decla.global.dart';
 
 
 class NoteCycle extends StatelessWidget {
@@ -12,6 +14,22 @@ class NoteCycle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.pink,
+        elevation: 1,
+        leading:  IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ), onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => InscriGlobal ()),
+          );
+        },
+        ),
+        title: Text("Declarer mon cycle"),
+      ),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [const Text(' Avez-vous un cycle régulier  ?', style: TextStyle(
@@ -30,7 +48,7 @@ class NoteCycle extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) =>PageInfo4()),
+                    MaterialPageRoute(builder: (context) =>pageRegle()),
                   );
                 },
                 child: const Text("            J'ai un cycle regulier                           ",
@@ -50,7 +68,7 @@ class NoteCycle extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) =>PageInfo4()),
+                  MaterialPageRoute(builder: (context) =>pageRegle()),
                 );
               },
               child: const Text("               J'ai un cycle iregulier                         ",
@@ -69,7 +87,7 @@ class NoteCycle extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) =>PageInfo4()),
+                  MaterialPageRoute(builder: (context) =>pageRegle()),
                 );
               },
               child: const Text("                  Je ne sais pas                                 ",

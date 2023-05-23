@@ -34,10 +34,11 @@ class _InscriptionState extends State<Inscription> {
 
                 // ignore: prefer_const_constructors
                 Center(
-                  child: Text('Créer un compte',
+                  child:
+                  Text('Créer un compte',
                       style: Theme.of(context).textTheme.titleLarge),
                 ),
-                const SizedBox( height: 10.0),
+                const SizedBox( height: 20.0),
                 TextFormField(
                   decoration: const InputDecoration(
                       labelText: 'Nom complet',
@@ -46,7 +47,7 @@ class _InscriptionState extends State<Inscription> {
                   validator: (val) => val!.isEmpty ? 'Entrez votre Nom Complet' : null,
                   onChanged: (val) => nomcomplet = val,
                 ),
-                const SizedBox( height: 10.0),
+                const SizedBox( height: 20.0),
                 TextFormField(
                   decoration: const InputDecoration(
                       labelText: 'Email',
@@ -55,7 +56,7 @@ class _InscriptionState extends State<Inscription> {
                   validator: (val) => val!.isEmpty ? 'Entrez votre Email' : null,
                   onChanged: (val) => nomcomplet = val,
                 ),
-                const SizedBox( height: 10.0),
+                const SizedBox( height: 20.0),
                 TextFormField(
                   decoration: const InputDecoration(
                       labelText: 'Mot de passe',
@@ -65,7 +66,7 @@ class _InscriptionState extends State<Inscription> {
                   onChanged: (val) => nomcomplet = val,
                   obscureText: true,
                 ),
-                const SizedBox( height: 10.0),
+                const SizedBox( height: 20.0),
                 TextFormField(
                   decoration: const InputDecoration(
                       labelText: 'Confirmer le mot de passe ',
@@ -76,7 +77,7 @@ class _InscriptionState extends State<Inscription> {
 
                   obscureText: true,
                 ),
-                Padding(padding: EdgeInsets.all(10)),
+                Padding(padding: EdgeInsets.all(20)),
 
                 FloatingActionButton(
                   onPressed: (){

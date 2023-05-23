@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:saytu_jigueen_ni/view/widgets/Pagenote.dart';
+
+
+import '../decgloss.dart';
+import 'decla.global.dart';
 
 class PageGros extends StatefulWidget {
   const PageGros({Key? key}) : super(key: key);
@@ -14,9 +17,25 @@ class _PageGrosState extends State<PageGros> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+        backgroundColor: Colors.pink,
+        elevation: 1,
+        leading:  IconButton(
+        icon: Icon(
+        Icons.arrow_back,
+        color: Colors.white,
+    ), onPressed: () {
+    Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => InscriGlobal ()),
+    );
+    },
+    ),
+    title: Text("Declarer ma  grossesse"),
+        ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             Image.asset('assets/images/femm.png', height: 250,),
             Padding(
@@ -100,7 +119,7 @@ class _PageGrosState extends State<PageGros> {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) =>PageNote1()),
+                  MaterialPageRoute(builder: (context) =>Declaration()),
                 );
               },
               child: const Text("                    Suivant                        ",
