@@ -142,7 +142,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   if(_formKey.currentState!.validate()) {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) =>LoginView()),
+                      MaterialPageRoute(builder: (context) =>SplashView()),
                     );
                     //TODO:Appliquer la logique
 

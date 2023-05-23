@@ -2,6 +2,8 @@ import 'package:flutter/material.dart' ;
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:saytu_jigueen_ni/view/widgets/profil.dart';
 
+import '../splash.view.dart';
+
 class Parametre extends StatefulWidget {
   const Parametre({Key? key}) : super(key: key);
 
@@ -10,6 +12,7 @@ class Parametre extends StatefulWidget {
 }
 
 class _ParametreState extends State<Parametre> {
+  final _formKey = GlobalKey<FormState >();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -301,21 +304,24 @@ class _ParametreState extends State<Parametre> {
                 ],
               ),
             ),
-            Padding(padding: EdgeInsets.all(40)),
 
-            TextButton(
-              style: const ButtonStyle(
-                  padding:MaterialStatePropertyAll(EdgeInsets.all(20)) ,
-                  backgroundColor: MaterialStatePropertyAll(Colors.pink)
-              ),
-              onPressed: () {
 
+            FloatingActionButton(
+              onPressed: (){
+                if(_formKey.currentState!.validate()) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => SplashView()),
+                  );
+                  //TODO:Appliquer la logique
+
+                }
               },
-              child: const Text("                  Supprimer mon Compte                                ",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),),
+              backgroundColor:  Colors.pink,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)
+              ),
+              child: const Text("Supprimer mon Compte"),
             ),
           ],
 
