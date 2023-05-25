@@ -196,7 +196,7 @@ class _pageRegleState extends State<pageRegle> {
               onPressed: (){
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => Caladar()),
+                  MaterialPageRoute(builder: (context) =>  CalendarScreen()),
                 );
               },
               child: Text('                   Enrigister                  ',

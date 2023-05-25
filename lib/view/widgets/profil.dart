@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' ;
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:saytu_jigueen_ni/view/login.view.dart';
+import 'package:saytu_jigueen_ni/view/widgets/caladar.dart';
 import 'package:saytu_jigueen_ni/view/widgets/parametre.dart';
 
 import '../splash.view.dart';
@@ -24,7 +25,12 @@ class _ProfilPageState extends State<ProfilPage> {
           icon: Icon(
             Icons.arrow_back,
             color: Colors.pink,
-          ), onPressed: () {},
+          ), onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) =>CalendarScreen()),
+          );
+        },
         ),
         actions: [
           IconButton(

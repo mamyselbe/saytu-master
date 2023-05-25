@@ -5,6 +5,7 @@ import 'package:saytu_jigueen_ni/view/login.view.dart';
 import 'package:saytu_jigueen_ni/view/splash.view.dart';
 import 'package:saytu_jigueen_ni/view/widgets/Inscription.dart';
 import 'package:saytu_jigueen_ni/view/widgets/Pageview.dart';
+import 'package:saytu_jigueen_ni/view/widgets/caladar.dart';
 import 'package:saytu_jigueen_ni/view/widgets/cycle.dart';
 import 'package:saytu_jigueen_ni/view/widgets/decla.global.dart';
 import 'package:saytu_jigueen_ni/view/widgets/liste%20grossesse.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return  GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Declaration(),
+      home:CalendarScreen(),
 
     );
 
