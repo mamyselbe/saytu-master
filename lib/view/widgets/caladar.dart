@@ -4,6 +4,18 @@ import 'package:saytu_jigueen_ni/view/widgets/parametre.dart';
 import 'package:saytu_jigueen_ni/view/widgets/profil.dart';
 import 'package:saytu_jigueen_ni/view/widgets/regles.dart';
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Gestion du cycle menstruel',
+      theme: ThemeData(primarySwatch: Colors.pink),
+      debugShowCheckedModeBanner: false,
+      home: CalendarScreen(),
+    );
+  }
+}
+
 class CalendarScreen extends StatefulWidget {
   @override
   _CalendarScreenState createState() => _CalendarScreenState();
@@ -162,4 +174,3 @@ class _CalendarScreenState extends State<CalendarScreen> {
     );
   }
 }
-

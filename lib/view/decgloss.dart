@@ -28,6 +28,7 @@ class _DeclarationState extends State<Declaration> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => PageGros ()),
+
             );
           },
           ),

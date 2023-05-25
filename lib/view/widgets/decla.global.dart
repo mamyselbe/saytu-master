@@ -7,7 +7,6 @@ import 'package:saytu_jigueen_ni/view/widgets/note.dart';
 
 import 'cycle.dart';
 
-
 class InscriGlobal extends StatelessWidget {
   const InscriGlobal({Key? key}) : super(key: key);
 
@@ -16,67 +15,76 @@ class InscriGlobal extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text('Je veux :', style: TextStyle(
-          color: Colors.black,
-          fontSize: 40,
-          fontWeight: FontWeight.bold)),
-          Padding(padding: EdgeInsets.all(10)),
-          ElevatedButton(
-            style: ButtonStyle(
-              padding:MaterialStatePropertyAll(EdgeInsets.all(08)) ,
-              backgroundColor: MaterialStatePropertyAll(Colors.pink),
-
-            ),
-              onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) =>NoteCycle()),
-              );
-              },
-          child:ListTile(
-            leading: Icon(Icons.calendar_month_outlined ,color: Colors.white),
-            title: Text(' Suivre mon cycle ',
+        children: [
+          const Text('Je veux :',
               style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white
+                color: Colors.black,
+                fontSize: 36,
+                fontWeight: FontWeight.w900,
+              )
+          ),
+          const Padding(padding: EdgeInsets.all(10)),
+          SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40.0, 0, 40.0, 0),
+            child: ElevatedButton(
+              style: const ButtonStyle(
+                padding: MaterialStatePropertyAll(EdgeInsets.all(8.0)),
+                backgroundColor: MaterialStatePropertyAll(Colors.pink),
               ),
-            ),
-          ),
-
-          ),
-          Padding(padding: EdgeInsets.all(10)),
-          ElevatedButton(
-            style: ButtonStyle(
-              padding:MaterialStatePropertyAll(EdgeInsets.all(08)) ,
-              backgroundColor: MaterialStatePropertyAll(Colors.pink),
-            ),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) =>PageGros()),
-              );
-            },
-            child:ListTile(
-              leading: Icon(Icons.woman ,color: Colors.white,),
-              title: Text(' Suivre ma grossesse ',
-                style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NoteCycle())
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.calendar_month_outlined, color: Colors.white),
+                title: Text(
+                  'Déclarer mon cycle',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-
           ),
-
-
-
-
-
+          const Padding(padding: EdgeInsets.all(10)),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40.0, 0, 40.0, 0),
+            child: ElevatedButton(
+              style: const ButtonStyle(
+                padding: MaterialStatePropertyAll(EdgeInsets.all(08)),
+                backgroundColor: MaterialStatePropertyAll(Colors.pink),
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PageGros())
+                );
+              },
+              child: const ListTile(
+                leading: Icon(
+                  Icons.woman,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Déclarer ma grossesse',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
