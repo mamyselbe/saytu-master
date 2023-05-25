@@ -27,7 +27,7 @@ class _DeclarationState extends State<Declaration> {
             ), onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => PageGros ()),
+              MaterialPageRoute(builder: (context) => const PageGros ()),
             );
           },
           ),
