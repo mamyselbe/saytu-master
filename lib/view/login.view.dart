@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saytu_jigueen_ni/utils/global.color.dart';
+import 'package:saytu_jigueen_ni/view/widgets/Inscription.dart';
 import 'package:saytu_jigueen_ni/view/widgets/button.global.dart';
 import 'package:saytu_jigueen_ni/view/widgets/social.login.dart';
 import 'package:saytu_jigueen_ni/view/widgets/decla.global.dart';
@@ -79,7 +80,10 @@ class _LoginState extends State<Login> {
                             MaterialPageRoute(builder: (context) => const InscriGlobal())
                         );
                       } else {
-                        Navigator.pushReplacementNamed(context, '/login');
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Login())
+                        );
                       }
                     }
                   },
@@ -110,7 +114,10 @@ class _LoginState extends State<Login> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/register');
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Inscription())
+                          );
                         },
                         child: const Text(
                             'Inscription',

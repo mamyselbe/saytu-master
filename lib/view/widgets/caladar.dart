@@ -81,18 +81,17 @@ class _CalendarScreenState extends State<CalendarScreen> {
       appBar: AppBar(
         backgroundColor: Colors.pink,
         elevation: 1,
-        leading:  IconButton(
+        leading: IconButton(
           icon: Icon(
             Icons.settings,
             color: Colors.white,
-          ), onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => Parametre()),
-          );
-        },
-
-
+          ),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Parametre()),
+            );
+          },
         ),
         title: Text('Gestion du cycle menstruel'),
         actions: [
@@ -100,14 +99,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
             icon: Icon(
               Icons.person,
               color: Colors.white,
-            ), onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) =>ProfilPage()),
-            );
-          },
-
-
+            ),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilPage()),
+              );
+            },
           ),
         ],
       ),
@@ -147,7 +145,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       date.toString().substring(0, 10),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: _estDateOvulation(date) ? Colors.yellow : Colors.red,
+                        color: _estDateOvulation(date)
+                            ? Colors.yellow
+                            : Colors.red,
                       ),
                     ),
                   );
@@ -162,7 +162,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
             SizedBox(height: 16),
             Text(
               '${_dateOvulation.toString().substring(0, 10)}',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.yellow),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.yellow),
             ),
           ],
         ),
