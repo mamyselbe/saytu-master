@@ -3,6 +3,7 @@ import 'package:saytu_jigueen_ni/utils/global.color.dart';
 import 'package:saytu_jigueen_ni/view/widgets/parametre.dart';
 import 'package:saytu_jigueen_ni/view/widgets/profil.dart';
 import 'package:saytu_jigueen_ni/view/widgets/regles.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -25,6 +26,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   late DateTime _dateSelectionnee;
   late List<DateTime> _datesMenstruelles;
   late DateTime _dateOvulation;
+  late DateTime _selectedDay = 25;
 
   @override
   void initState() {
@@ -110,70 +112,25 @@ class _CalendarScreenState extends State<CalendarScreen> {
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () => _selectionnerDate(context),
-              child: Column(
-                children: [
-                  Text(
-                    'Date sélectionnée :',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    '${_dateSelectionnee.toString().substring(0, 10)}',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 32),
-            Text(
-              'Dates menstruelles :',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 16),
-            Expanded(
-              child: ListView.builder(
-                itemCount: _datesMenstruelles.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final date = _datesMenstruelles[index];
-                  return ListTile(
-                    title: Text(
-                      date.toString().substring(0, 10),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: _estDateOvulation(date)
-                            ? Colors.yellow
-                            : Colors.red,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(height: 32),
-            Text(
-              'Date d\'ovulation :',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 16),
-            Text(
-              '${_dateOvulation.toString().substring(0, 10)}',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.yellow),
-            ),
-          ],
-        ),
+        child: TableCalendar(
+          firstDay: DateTime.utc(2010, 10, 16),
+          lastDay: DateTime.utc(2030, 3, 14),
+          focusedDay: DateTime.now(),
+          selectedDayPredicate: (day) {
+            return isSameDay(_selectedDay, day);
+          },
+          onDaySelected: (selectedDay, focusedDay) {
+            setState(() {
+              _selectedDay = selectedDay;
+              _focusedDay = focusedDay; // update `_focusedDay` here as well
+            });
+          },
+        )
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _ajouterDateMenstruelle,
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _ajouterDateMenstruelle,
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }
